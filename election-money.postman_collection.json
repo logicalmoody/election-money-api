@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "5672c2a5-362e-4c5b-ac08-84e19378ca58",
+		"name": "election-money",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Contributors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/contributors",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contributors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contributors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/candidates",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"candidates"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
