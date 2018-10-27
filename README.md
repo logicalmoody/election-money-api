@@ -3,10 +3,11 @@
 ## Getting Started
 
 ### Technologies
-Node/Express
-ES6
-Babel
-NPM
+
+-   Node/Express
+-   ES6
+-   Babel
+-   NPM
 
 ### Running a local server
 
