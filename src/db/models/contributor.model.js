@@ -1,50 +1,36 @@
-import { db } from "../db"
-
-export const Contributor = db.sequelize.define("contributor", {
-	ContributorId: {
-		type: db.Sequelize.INTEGER,
-		autoIncrement: true,
-		primaryKey: true
-	},
-	LastName: {
-		type: db.Sequelize.STRING
-	},
-	FirstName: {
-		type: db.Sequelize.STRING
-	},
-	Address: {
-		type: db.Sequelize.STRING
-	},
-	City: {
-		type: db.Sequelize.STRING
-	},
-	State: {
-		type: db.Sequelize.STRING
-	},
-	Zip: {
-		type: db.Sequelize.STRING
-	},
-	PAC: {
-		type: db.Sequelize.STRING
-	},
-	Occupation: {
-		type: db.Sequelize.STRING
-	},
-	Employer: {
-		type: db.Sequelize.STRING
-	}
-})
-
-Contributor.sync({ force: true }).then(() => {
-	return Contributor.create({
-		FirstName: "Test",
-		LastName: "Contributor",
-		Address: "123 Test Road",
-		City: "Test City",
-		State: "TS",
-		Zip: "12345",
-		PAC: "test",
-		Occupation: "Tester",
-		Employer: "Test INC"
+export const contributor = (sequelize, Sequelize) => {
+	return sequelize.define("Contributor", {
+		ContributorId: {
+			type: Sequelize.INTEGER,
+			autoIncrement: true,
+			primaryKey: true
+		},
+		LastName: {
+			type: Sequelize.STRING(500)
+		},
+		FirstName: {
+			type: Sequelize.STRING(500)
+		},
+		Address: {
+			type: Sequelize.STRING(500)
+		},
+		City: {
+			type: Sequelize.STRING(500)
+		},
+		State: {
+			type: Sequelize.STRING(2)
+		},
+		Zip: {
+			type: Sequelize.STRING(12)
+		},
+		PAC: {
+			type: Sequelize.STRING(1000)
+		},
+		Occupation: {
+			type: Sequelize.STRING(500)
+		},
+		Employer: {
+			type: Sequelize.STRING(1000)
+		}
 	})
-})
+}

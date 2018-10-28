@@ -1,72 +1,48 @@
-import { db } from "../db"
-
-export const Candidate = db.sequelize.define(
-	"Candidate",
-	{
+export const candidate = (sequelize, Sequelize) => {
+	return sequelize.define("Candidate", {
 		CandidateId: {
-			type: db.Sequelize.INTEGER,
+			type: Sequelize.INTEGER,
+			allowNull: false,
 			autoIncrement: true,
 			primaryKey: true
 		},
 		FilerId: {
-			type: db.Sequelize.STRING
+			type: Sequelize.STRING(20)
 		},
-		OfficeId: {
-			type: db.Sequelize.INTEGER
-		},
+		// TODO: Ask Wayne if this is needed?
+		// OfficeId: {
+		// 	type: db.Sequelize.INTEGER
+		// },
 		Status: {
-			type: db.Sequelize.INTEGER
+			type: Sequelize.ENUM("Active") // add more here
 		},
 		ElectionType: {
-			type: db.Sequelize.INTEGER
+			type: Sequelize.ENUM("General", "Run-Off General")
 		},
 		ElectionYear: {
-			type: db.Sequelize.INTEGER
+			type: Sequelize.INTEGER,
+			allowNull: false
 		},
 		FirstName: {
-			type: db.Sequelize.STRING
+			type: Sequelize.STRING(500)
 		},
 		MiddleName: {
-			type: db.Sequelize.STRING
+			type: Sequelize.STRING(500)
 		},
 		LastName: {
-			type: db.Sequelize.STRING
+			type: Sequelize.STRING(500)
 		},
 		Suffix: {
-			type: db.Sequelize.STRING
+			type: Sequelize.STRING(100)
 		},
 		CommitteeName: {
-			type: db.Sequelize.STRING
+			type: Sequelize.STRING(1000)
 		},
 		Address: {
-			type: db.Sequelize.STRING
+			type: Sequelize.STRING(1000)
 		},
 		Party: {
-			type: db.Sequelize.STRING
+			type: Sequelize.STRING(500)
 		}
-	},
-	{
-		validate: {
-			hasElectionYear() {
-				if (this.ElectionYear === null) throw new Error("ElectionYear is a required field!")
-			}
-		}
-	}
-)
-
-Candidate.sync({ force: true }).then(() => {
-	return Candidate.create({
-		FilerId: "123456",
-		OfficeId: 123,
-		Status: 1,
-		ElectionType: 2,
-		ElectionYear: 2018,
-		FirstName: "Test",
-		MiddleName: "Mc",
-		LastName: "Candidate",
-		Suffix: "Jr",
-		CommitteeName: "Test Committee",
-		Address: "321 Test Lane",
-		Party: "Test Party"
 	})
-})
+}
