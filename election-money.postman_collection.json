@@ -6,11 +6,14 @@
 	},
 	"item": [
 		{
-			"name": "Contributors",
+			"name": "All Contributors",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:3000/contributors",
 					"host": [
@@ -25,11 +28,14 @@
 			"response": []
 		},
 		{
-			"name": "Contributors",
+			"name": "All Candidates",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:3000/candidates",
 					"host": [
@@ -44,11 +50,14 @@
 			"response": []
 		},
 		{
-			"name": "Contributions",
+			"name": "All Contributions",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:3000/contributions",
 					"host": [

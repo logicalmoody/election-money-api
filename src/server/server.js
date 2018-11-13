@@ -1,5 +1,5 @@
 import express from "express"
-import { router } from "../routes/index"
+import { router } from "../routes/index.route"
 import bodyParser from "body-parser"
 import { env, db } from "../db/db"
 
