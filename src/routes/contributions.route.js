@@ -1,5 +1,6 @@
 import { db } from "../db/db"
 
+/* Returns all contributions. */
 export async function getAllContributions(req, res) {
     try {
         const results = await db.contribution.findAll()
@@ -12,6 +13,7 @@ export async function getAllContributions(req, res) {
     }
 }
 
+/* Returns the contribution for the given ID. */
 export async function getContribution(req, res) {
     try {
         if (!("id" in req.query)) {
