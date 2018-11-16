@@ -1,10 +1,16 @@
 import express from "express"
-import { getAllCandidates } from "./candidates.route"
-import { getAllContributors } from "./contributors.route"
-import { getAllContributions } from "./contributions.route"
+import { getAllCandidates, getCandidate } from "./candidates.route"
+import { getAllContributors, getContributor } from "./contributors.route"
+import { getAllContributions, getContribution } from "./contributions.route"
 
 export const router = express.Router()
 
+/* Get all */
 router.get("/candidates", getAllCandidates)
 router.get("/contributors", getAllContributors)
 router.get("/contributions", getAllContributions)
+
+/* Get by ID */
+router.get("/candidate", getCandidate)
+router.get("/contributor", getContributor)
+router.get("/contribution", getContribution)
