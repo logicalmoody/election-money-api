@@ -1,7 +1,12 @@
 import express from "express"
 import { getAllCandidates, getCandidate, getCandidatesForContributor } from "./candidates.route"
 import { getAllContributors, getContributor, getContributorsForCandidate } from "./contributors.route"
-import { getAllContributions, getContribution } from "./contributions.route"
+import {
+    getAllContributions,
+    getContribution,
+    getContributionsForCandidate,
+    getContributionsForContributor
+} from "./contributions.route"
 
 export const router = express.Router()
 
@@ -18,3 +23,6 @@ router.get("/contribution", getContribution)
 /* Get by relation. */
 router.get("/candidate/contributors", getContributorsForCandidate)
 router.get("/contributor/candidates", getCandidatesForContributor)
+
+router.get("/candidate/contributions", getContributionsForCandidate)
+router.get("/contributor/contributions", getContributionsForContributor)
