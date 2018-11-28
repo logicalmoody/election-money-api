@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f736396c-6bbb-4bac-9e25-d00b05e34e0d",
+		"_postman_id": "3f659b57-910b-4f9e-a97d-c50dbe7b0a6b",
 		"name": "election-money",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -81,15 +81,16 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/candidate?id=1",
+					"raw": "localhost:3000/candidate/:id",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"candidate"
+						"candidate",
+						":id"
 					],
-					"query": [
+					"variable": [
 						{
 							"key": "id",
 							"value": "1"
@@ -109,15 +110,16 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/contributor?id=1",
+					"raw": "localhost:3000/contributor/:id",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"contributor"
+						"contributor",
+						":id"
 					],
-					"query": [
+					"variable": [
 						{
 							"key": "id",
 							"value": "1"
@@ -137,15 +139,16 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/contribution?id=1",
+					"raw": "localhost:3000/contribution/:id",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"contribution"
+						"contribution",
+						":id"
 					],
-					"query": [
+					"variable": [
 						{
 							"key": "id",
 							"value": "1"
@@ -165,20 +168,17 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/candidate/contributors?id=2",
+					"raw": "localhost:3000/candidate/:id/contributors",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"candidate",
+						":id",
 						"contributors"
 					],
 					"query": [
-						{
-							"key": "id",
-							"value": "2"
-						},
 						{
 							"key": "limit",
 							"value": "2",
@@ -188,6 +188,12 @@
 							"key": "offset",
 							"value": "1",
 							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
 						}
 					]
 				}
@@ -204,20 +210,17 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/contributor/candidates?id=2",
+					"raw": "localhost:3000/contributor/:id/candidates",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"contributor",
+						":id",
 						"candidates"
 					],
 					"query": [
-						{
-							"key": "id",
-							"value": "2"
-						},
 						{
 							"key": "limit",
 							"value": "",
@@ -227,6 +230,12 @@
 							"key": "offset",
 							"value": "",
 							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
 						}
 					]
 				}
@@ -243,20 +252,17 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/candidate/contributions?id=1",
+					"raw": "localhost:3000/candidate/:id/contributions?order=desc",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"candidate",
+						":id",
 						"contributions"
 					],
 					"query": [
-						{
-							"key": "id",
-							"value": "1"
-						},
 						{
 							"key": "limit",
 							"value": "2",
@@ -266,6 +272,16 @@
 							"key": "offset",
 							"value": "1",
 							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
 						}
 					]
 				}
@@ -282,20 +298,17 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/contributor/contributions?id=2",
+					"raw": "localhost:3000/contributor/:id/contributions?order=asc",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"contributor",
+						":id",
 						"contributions"
 					],
 					"query": [
-						{
-							"key": "id",
-							"value": "2"
-						},
 						{
 							"key": "limit",
 							"value": "2",
@@ -305,6 +318,16 @@
 							"key": "offset",
 							"value": "1",
 							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
 						}
 					]
 				}
