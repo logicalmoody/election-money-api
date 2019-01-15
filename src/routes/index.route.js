@@ -1,12 +1,21 @@
 import express from "express"
-import { getAllCandidates, getCandidate, getCandidatesForContributor } from "./candidates.route"
-import { getAllContributors, getContributor, getContributorsForCandidate } from "./contributors.route"
 import {
-	getAllContributions,
-	getContribution,
-	getContributionsForCandidate,
-	getContributionsForContributor
+  getAllCandidates,
+  getCandidate,
+  getCandidatesForContributor
+} from "./candidates.route"
+import {
+  getAllContributors,
+  getContributor,
+  getContributorsForCandidate
+} from "./contributors.route"
+import {
+  getAllContributions,
+  getContribution,
+  getContributionsForCandidate,
+  getContributionsForContributor
 } from "./contributions.route"
+import { getLogs } from "./log.route.js"
 
 export const router = express.Router()
 
@@ -26,3 +35,6 @@ router.get("/contributor/:id/candidates", getCandidatesForContributor)
 
 router.get("/candidate/:id/contributions", getContributionsForCandidate)
 router.get("/contributor/:id/contributions", getContributionsForContributor)
+
+/* Get logs by start/end date. */
+router.get("/logs", getLogs)
